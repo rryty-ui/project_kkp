@@ -110,6 +110,12 @@ if (isset($_POST['submit'])) {
     <!-- Main CSS-->
     <link href="assets/css/theme.css" rel="stylesheet" media="all">
 
+    <style>
+        body {
+            background-color: hsl(220, 7.69%, 92.35%);
+        }
+    </style>
+    
 </head>
 
 <body>

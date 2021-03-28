@@ -6,7 +6,7 @@
 
     $redirect = "";
     
-    if (isset($_SESSION['is_data_parent_exist'])) {
+    if (isset($_SESSION['data_alamat_exist'])) {
         $redirect = "<script> window.location='daftar_syarat.php'; </script>";
     }else{
         $redirect = "<script> window.location='daftar_orang_tua.php'; </script>";
@@ -59,6 +59,12 @@
 
     <!-- Main CSS-->
     <link href="assets/css/theme.css" rel="stylesheet" media="all">
+
+    <style>
+        body {
+            background-color: hsl(220, 7.69%, 92.35%);
+        }
+    </style>
     
 </head>
 
@@ -90,22 +96,14 @@
                                 <label for="text-input" class=" form-control-label">RT</label>
                             </div>
                             <div class="col col-md-5">
-                                <input type="text" name="rt" class="form-control" value="<?php isset($_SESSION['rt'])  ?  print($_SESSION['rt']) : ""; ?>" required>
+                                <input type="text" name="rt" class="form-control" placeholder="RT" value="<?php isset($_SESSION['rt'])  ?  print($_SESSION['rt']) : ""; ?>" required>
                             </div>
                             <div class="col col-md-1">
                                 <label for="text-input" class=" form-control-label">RW</label>
                             </div>
                             <div class="col col-md-5">                                
-                                <input type="text" name="rw" class="form-control" value="<?php isset($_SESSION['rw'])  ?  print($_SESSION['rw']) : ""; ?>" required>
+                                <input type="text" name="rw" class="form-control" placeholder="RW`" value="<?php isset($_SESSION['rw'])  ?  print($_SESSION['rw']) : ""; ?>" required>
                             </div>                          
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Kecamatan</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <input type="text" name="kc" placeholder="Kecamatan" class="form-control" value="<?php isset($_SESSION['kc'])  ?  print($_SESSION['kc']) : ""; ?>" required>
-                            </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3">
@@ -113,6 +111,14 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input type="text" name="kl" placeholder="Kelurahan" class="form-control" value="<?php isset($_SESSION['kl'])  ?  print($_SESSION['kl']) : ""; ?>" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Kecamatan</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" name="kc" placeholder="Kecamatan" class="form-control" value="<?php isset($_SESSION['kc'])  ?  print($_SESSION['kc']) : ""; ?>" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -165,7 +171,7 @@
                             </div>
                         </div>                        
                         <?php  
-                            if (isset($_SESSION['is_data_student_exist'])) {
+                            if (isset($_SESSION['data_alamat_exist'])) {
                             ?>
                             <button type="submit" name="submit" class="btn btn-primary pull-right">Kembali 
                             <i class="fa fa-arrow-right"></i></button>

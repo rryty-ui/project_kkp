@@ -6,7 +6,7 @@
 
     $redirect = "";
 
-	if (isset($_SESSION['is_data_student_exist'])) {
+	if (isset($_SESSION['data_akun_exist'])) {
 		$redirect = "<script> window.location='daftar_syarat.php'; </script>";
 	}else{
 		$redirect = "<script> window.location='daftar_calon_siswa.php'; </script>";
@@ -84,6 +84,12 @@
     <!-- Main CSS-->
     <link href="assets/css/theme.css" rel="stylesheet" media="all">
 
+    <style>
+        body {
+            background-color: hsl(220, 7.69%, 92.35%);
+        }
+    </style>
+
 </head>
 
 <body class="animsition">
@@ -115,7 +121,7 @@
                         </div>
 
                         <?php  
-                        if (isset($_SESSION['is_data_student_exist'])) {
+                        if (isset($_SESSION['data_akun_exist'])) {
                         ?>
                             <button type="submit" name="submit" class="btn btn-primary pull-right">Kembali <i class="fa fa-arrow-right"></i></button>
                         <?php
