@@ -8,15 +8,15 @@
 	//check if $_SESSION is exist
 	if (isset($_SESSION)) {
 		foreach ($_SESSION as $key => $val) {
-			${$key} = $val;
+			${$key} = $val;	
 		}
 
 
-		$sql	= "INSERT INTO pendaftaran VALUES(null,'$full_name', '$nick_name', '$birth_place'
-					, '$birth_date' ,'$gender', '$child_number', '$child_total', '$in_jakarta_follow'
-					, '$father_name', '$birth_place_father','$birth_date_father', '$father_last_education'
-					, '$father_job', '$father_religion','$mother_name', '$birth_place_mother', '$birth_date_mother'
-					, '$mother_last_education', '$mother_job', '$mother_religion', '$telp','','','','')";
+		$sql	= "INSERT INTO pendaftaran VALUES(null, '$daftar', '$nl', '$np', '$nik', '$jk'
+					, '$agama', '$tl', '$tgl', '$anak', '$saudara', '$tb','$bb', '$ntlp', '$al', '$rt'
+					, '$rw', '$kl', '$kc', '$kk', '$pv', '$kp', '$jks', '$transport','$n_ayah', '$tl_ayah'
+					, '$tgl_ayah', '$agama_ayah', '$pd_ayah', '$pk_ayah', '$pn_ayah', '$ntlp_ayah', '$n_ibu'
+					, '$tl_ibu', '$tgl_ibu', '$agama_ibu', '$pd_ibu', '$pk_ibu', '$pn_ibu', '$ntlp_ibu','','','','')";
 
 		$exec 	= mysqli_query($conn,$sql);
 
@@ -37,7 +37,7 @@
 
 			if ($exec_akun && $exec_detil) {
 				session_destroy();
-				echo'<script> window.location="success_register.php"; </script> ';
+				echo'<script> window.location="berhasil_registrasi.php"; </script> ';
 			}else{
 				echo mysqli_error($conn);
 				echo 'gagal';

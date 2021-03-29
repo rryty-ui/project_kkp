@@ -1,0 +1,9 @@
+login admin
+
+    email   : adminpsb@gmail.com
+    pass    : 1234
+
+Login Calon Siswa
+
+    email   : midone@gmail.com
+    pass    : 1234

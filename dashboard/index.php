@@ -166,7 +166,7 @@ switch ($getPage) {
 
 ?>
 
-<!doctype html>
+<!Doctype html>
 <html lang="en">
 	
 <head>
@@ -179,220 +179,211 @@ switch ($getPage) {
     ?>
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
-            <!--
-                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-                Tip 2: you can also add an image using data-image tag
-            -->
+<link rel="stylesheet" href="/dashboard/">
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                    Selamat datang <?php $role == "Admin" ? print($nama_admin) : print($nama_panggilan); ?>
+                <a href="#">
+                    <img src="../assets/utama/img/logo_edit.png" alt="Citra Indonesia"/>
                 </a>
             </div>
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <li class="<?php $_SESSION['active'] == 1 ? print("active") : print("") ?>">
-                        <a href="index.php?page=1">
-                            <i class="material-icons">dashboard</i>
-                            <p>Home</p>
-                        </a>
-                    </li>
-					
-					<?php  
-					if ($role == "User") {
-					?>
-					<li class="<?php $_SESSION['active'] == 2 ? print("active") : print("") ?>">
-                        <a href="index.php?page=2">
-                            <i class="material-icons">person</i>
-                            <p>User Profile </p>
-                        </a>
-                    </li>
-					<?php
-					}
-					?>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub class="<?php $_SESSION['active'] == 1 ? print("active") : print("") ?>"">
+                            <a class="js-arrow" href="index.php?page=1">
+                                <i class="fas fa-home"></i>Home
+                            </a>
+                        </li>
 
-                    
-                    <?php  
-					if ($role == "Admin") {
-					?>
-					<li class="<?php $_SESSION['active'] == 4 ? print("active") : print("") ?>">
-                        <a href="index.php?page=7">
-                            <i class="material-icons">content_paste</i>
-                            <p>Konfirmasi Pendaftaran </p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 6 ? print("active") : print("") ?>">
-                        <a href="index.php?page=10">
-                            <i class="material-icons">supervisor_account</i>
-                            <p>Guru</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 8 ? print("active") : print("") ?>">
-                        <a href="index.php?page=17">
-                            <i class="material-icons">supervisor_account</i>
-                            <p>Konfirmasi Pembayaran Pendaftaran</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 13 ? print("active") : print("") ?>">
-                        <a href="index.php?page=25">
-                            <i class="material-icons">supervisor_account</i>
-                            <p>Konfirmasi Pembayaran SPP</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 14 ? print("active") : print("") ?>">
-                        <a href="index.php?page=26">
-                            <i class="material-icons">subject</i>
-                            <p>Konfirmasi Pembayaran Kegiatan</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 9 ? print("active") : print("") ?>">
-                        <a href="index.php?page=18">
-                            <i class="material-icons">subject</i>
-                            <p>Laporan</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 10 ? print("active") : print("") ?>">
-                        <a href="index.php?page=19">
-                            <i class="material-icons">subject</i>
-                            <p>Mata Pelajaran</p>
-                        </a>
-                    </li>
+                        <?php  
+                            if ($role == "User") {
+                        ?>
 
-                    <li class="<?php $_SESSION['active'] == 11 ? print("active") : print("") ?>">
-                        <a href="index.php?page=22">
-                            <i class="material-icons">subject</i>
-                            <p>Jadwal</p>
-                        </a>
-                    </li>
-					<?php
-					}
-					?>
-                    
-                    <?php  
-                    if ($role == "User") {
-                    ?>
-                    <li class="<?php $_SESSION['active'] == 3 ? print("active") : print("") ?>">
-                        <a href="index.php?page=4">
-                            <i class="material-icons">content_paste</i>
-                            <p>Syarat Pendaftaran</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 5 ? print("active") : print("") ?>">
-                        <a href="index.php?page=9">
-                            <i class="material-icons">library_books</i>
-                            <p>Pembayaran</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
-                        <a href="index.php?page=14">
-                            <i class="material-icons">library_books</i>
-                            <p>Konfirmasi Pembayaran</p>
-                        </a>
-                    </li>
-                    <li class="<?php $_SESSION['active'] == 12 ? print("active") : print("") ?>">
-                        <a href="index.php?page=24">
-                            <i class="material-icons">library_books</i>
-                            <p>Jadwal</p>
-                        </a>
-                    </li>
-                    
-                    
-                    <?php
-                    }
-                    ?>
+                        <li class="<?php $_SESSION['active'] == 2 ? print("active") : print("") ?>">
+                            <a href="index.php?page=2">
+                                <i class="fas fa-user"></i>Profil Siswa</a>
+                        </li>
 
-                    
-                    
-                
-                    <li>
-                        <a href="../logout.php">
-                            <i class="material-icons text-gray">notifications</i>
-                            <p>Logout</p>
-                        </a>
-                    </li>
-                   
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-            <div class="content">
-                <div class="container-fluid">
-                   
-                   <?php  
+                        <?php
+                            }
+                        ?>
 
-                   include $page;
+                        <?php  
+                            if ($role == "Admin") {
+                        ?>
 
-                   ?>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-clipboard"></i>Konfirmasi</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li class="<?php $_SESSION['active'] == 4 ? print("active") : print("") ?>">
+                                    <a href="index.php?page=7">Konfirmasi Pendaftaran</a>
+                                </li>
+                                <li class="<?php $_SESSION['active'] == 8 ? print("active") : print("") ?>">
+                                    <a href="index.php?page=17">Konfirmasi Pembayaran Pendaftaran</a>
+                                </li>
+                                <li class="<?php $_SESSION['active'] == 13 ? print("active") : print("") ?>">
+                                    <a href="index.php?page=25">Konfirmasi Pembayaran SPP</a>
+                                </li>
+                                <li class="<?php $_SESSION['active'] == 14 ? print("active") : print("") ?>">
+                                    <a href="index.php?page=26">Konfirmasi Pembayaran Kegiatan</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 6 ? print("active") : print("") ?>">
+                            <a href="index.php?page=10">
+                                <i class="fas fa-user"></i>Guru</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 10 ? print("active") : print("") ?>">
+                            <a href="index.php?page=19">
+                                <i class="far fa-list-alt"></i>Mata Pelajaran</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 11 ? print("active") : print("") ?>">
+                            <a href="index.php?page=22">
+                                <i class="far fa-calendar-alt"></i>Jadwal</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 9 ? print("active") : print("") ?>">
+                            <a href="index.php?page=18">
+                                <i class="far fa-file-alt"></i>Laporan</a>
+                        </li>
                         
+                        <?php
+                            }
+                        ?>
+
+                        <?php  
+                            if ($role == "User") {
+                        ?>
+                        <li class="<?php $_SESSION['active'] == 3 ? print("active") : print("") ?>">
+                            <a href="index.php?page=4">
+                                <i class="fas fa-clipboard-list"></i>Syarat Pendaftaran</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 5 ? print("active") : print("") ?>">
+                            <a href="index.php?page=9">
+                                <i class="fas fa-credit-card"></i>Pembayaran</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
+                            <a href="index.php?page=14">
+                                <i class="fas fa-clipboard-check"></i>Konfirmasi Pembayaran</a>
+                        </li>
+                        <li class="<?php $_SESSION['active'] == 12 ? print("active") : print("") ?>">
+                            <a href="index.php?page=24">
+                                <i class="fas fa-calendar-alt"></i>Jadwal</a>
+                        </li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap" style="float: right;">
+                            <div class="header-button">
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="../assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">
+                                                <?php $role == "Admin" ? print($nama_admin) : print($nama_panggilan); ?>
+                                            </a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="../assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">
+                                                            <?php $role == "Admin" ? print($nama_admin) : print($nama); ?>
+                                                        </a>
+                                                    </h5>
+                                                    <span class="email">
+                                                        <?php $role == "Admin" ? print($email) : print($email); ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Pengaturan Akun</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="../logout.php">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+            
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <?php  
+                                        include $page;
+                                    ?>
+                                </div>
+                            </div>
+                        </div>                               
+                    </div>
                 </div>
             </div>
-
-            <!--Class Footer
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="http://MasIamProgramming.id">Aplikasi Pendaftaran sekolah</a>, made M.Ilham Insani
-                    </p>
-                </div>
-            </footer> 
-            <!--AKhir Line Footer-->
-        </div>
+        </div>    
     </div>
-</body>
+    
+
 
     <!-- Jquery JS-->
-    <script src="assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="assets/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="assets/vendor/slick/slick.min.js">
+    <script src="../assets/vendor/slick/slick.min.js">
     </script>
-    <script src="assets/vendor/wow/wow.min.js"></script>
-    <script src="assets/vendor/animsition/animsition.min.js"></script>
-    <script src="assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="../assets/vendor/wow/wow.min.js"></script>
+    <script src="../assets/vendor/animsition/animsition.min.js"></script>
+    <script src="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="assets/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counter-up/jquery.counterup.min.js">
+    <script src="../assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="../assets/vendor/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="assets/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="assets/vendor/select2/select2.min.js">
+    <script src="../assets/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../assets/vendor/select2/select2.min.js">
     </script>
 
     <!-- Main JS-->
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
 
     <script>
         $(document).ready(function(){
