@@ -39,8 +39,13 @@ if ($_SESSION['role_user'] == 0) {
     }
 }
 
+$get_image = "SELECT foto_anak FROM pendaftaran WHERE id = $id";
+$result = mysqli_query($conn, $get_image);
 
-
+while($rows=mysqli_fetch_assoc($result))
+{
+    $gambar = $rows['foto_anak'];
+}
 
 $getPage = $_GET['page'];
 
@@ -84,12 +89,14 @@ switch ($getPage) {
         $_SESSION['active'] = "5";
         break;
     case 10:
-        $page               = "include/guru.php";
-        $_SESSION['active'] = 6;
+        $page               = "include/konfirmasi_test.php";
+        $_SESSION['active'] = "6";
         break;
     case 11:
-        $page               = "include/tambah_guru.php";
-        $_SESSION['active'] = 6;
+        $page               = "include/detail_pendaftaran.php";
+        $ida                = $_GET['ida'];
+        $idd                = $_GET['idd'];
+        $_SESSION['active'] = "6";
         break;
     case 12:
         $page               = "include/ubah_guru.php";
@@ -158,6 +165,10 @@ switch ($getPage) {
         $page               = "include/konfirmasi_pembayaran_kegiatan.php";
         $_SESSION['active'] = "7";
         break;
+    case 28:
+        $page               = "include/status_pendaftaran.php";
+        $_SESSION['active'] = "15";
+        break;
 	default:
 		$page 	= "include/home.php";
 		$_SESSION['active']	= "1";
@@ -215,35 +226,13 @@ switch ($getPage) {
                             if ($role == "Admin") {
                         ?>
 
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-clipboard"></i>Konfirmasi</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li class="<?php $_SESSION['active'] == 4 ? print("active") : print("") ?>">
-                                    <a href="index.php?page=7">Konfirmasi Pendaftaran</a>
-                                </li>
-                                <li class="<?php $_SESSION['active'] == 8 ? print("active") : print("") ?>">
-                                    <a href="index.php?page=17">Konfirmasi Pembayaran Pendaftaran</a>
-                                </li>
-                                <li class="<?php $_SESSION['active'] == 13 ? print("active") : print("") ?>">
-                                    <a href="index.php?page=25">Konfirmasi Pembayaran SPP</a>
-                                </li>
-                                <li class="<?php $_SESSION['active'] == 14 ? print("active") : print("") ?>">
-                                    <a href="index.php?page=26">Konfirmasi Pembayaran Kegiatan</a>
-                                </li>
-                            </ul>
+                        <li class="<?php $_SESSION['active'] == 4 ? print("active") : print("") ?>">
+                            <a href="index.php?page=7">
+                            <i class="fas fa-clipboard"></i>Konfirmasi Pendaftaran</a>
                         </li>
                         <li class="<?php $_SESSION['active'] == 6 ? print("active") : print("") ?>">
                             <a href="index.php?page=10">
-                                <i class="fas fa-user"></i>Guru</a>
-                        </li>
-                        <li class="<?php $_SESSION['active'] == 10 ? print("active") : print("") ?>">
-                            <a href="index.php?page=19">
-                                <i class="far fa-list-alt"></i>Mata Pelajaran</a>
-                        </li>
-                        <li class="<?php $_SESSION['active'] == 11 ? print("active") : print("") ?>">
-                            <a href="index.php?page=22">
-                                <i class="far fa-calendar-alt"></i>Jadwal</a>
+                                <i class="fas fa-user"></i>Konfirmasi Hasil Test</a>
                         </li>
                         <li class="<?php $_SESSION['active'] == 9 ? print("active") : print("") ?>">
                             <a href="index.php?page=18">
@@ -261,17 +250,17 @@ switch ($getPage) {
                             <a href="index.php?page=4">
                                 <i class="fas fa-clipboard-list"></i>Syarat Pendaftaran</a>
                         </li>
+                        <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
+                            <a href="index.php?page=28">
+                                <i class="fas fa-clipboard-check"></i>Status Pendaftaran</a>
+                        </li>
                         <li class="<?php $_SESSION['active'] == 5 ? print("active") : print("") ?>">
                             <a href="index.php?page=9">
-                                <i class="fas fa-credit-card"></i>Pembayaran</a>
-                        </li>
-                        <li class="<?php $_SESSION['active'] == 7 ? print("active") : print("") ?>">
-                            <a href="index.php?page=14">
-                                <i class="fas fa-clipboard-check"></i>Konfirmasi Pembayaran</a>
+                                <i class="fas fa-credit-card"></i>Rincian Biaya</a>
                         </li>
                         <li class="<?php $_SESSION['active'] == 12 ? print("active") : print("") ?>">
                             <a href="index.php?page=24">
-                                <i class="fas fa-calendar-alt"></i>Jadwal</a>
+                                <i class="fas fa-calendar-alt"></i>Jadwal Kegiatan</a>
                         </li>
 
                         <?php
@@ -294,7 +283,13 @@ switch ($getPage) {
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="../assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                        <?php
+                                            if ($role == "Admin") {
+                                                echo '<img src="../assets/uploads/admin.jpg" alt="admin" />';
+                                            } else {
+                                                echo '<img src="../assets/uploads/'.$gambar.'" alt="profile" />';
+                                            }                                          
+                                        ?>
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">
@@ -305,7 +300,13 @@ switch ($getPage) {
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="../assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <?php
+                                                            if ($role == "Admin") {
+                                                                echo '<img src="../assets/uploads/admin.jpg" alt="admin" />';
+                                                            } elseif ($role == "User") {
+                                                                echo '<img src="../assets/uploads/'.$gambar.'" alt="profile" />';
+                                                            }                                       
+                                                        ?>
                                                     </a>
                                                 </div>
                                                 <div class="content">

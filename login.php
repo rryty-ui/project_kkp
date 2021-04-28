@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-5 m-auto">
-            <h1 class="text-center login-title mt-5 mb-5">Pendaftaran Siswa Baru</h1>
+            <h1 class="text-center login-title mt-5 mb-5">Login PSB Citra Indonesia</h1>
                 <div class="card">
                     <div class="card-header" style="font-weight: 600;">Masuk</div>
                         <div class="card-body card-block">

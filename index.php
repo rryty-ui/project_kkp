@@ -65,12 +65,12 @@
   <!-- Akhir Navigasi -->
 
   <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid" style="background-image: url(assets/utama/img/slide_2.jpg);">
+  <div class="jumbotron jumbotron-fluid" style="background-image: url(assets/utama/img/gambar1.jpg);">
     <div class="container">
         <h1 class="display-4">Sekolah Citra Indonesia Bintaro</h1>
         <h3>At Home <span>Atmosphere</span></h3>
         <h3><span>Active</span> Learning</h3>
-        <a href="#" class="btn tombol__jumbo">Daftar</a>
+        <a href="../aaa/daftar_akun.php" class="btn tombol__jumbo">Daftar</a>
     </div> 
   </div>
   <!-- Akhir Jumbotron -->

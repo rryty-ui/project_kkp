@@ -10,10 +10,9 @@
             }
 
             if ($daftar['status_pendaftaran'] == 1) {
-                echo "<div class='alert alert-success alert-dismissable'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    <strong>Selamat!</strong> pendaftaran anda sudah dikonfirmasi Admin. Selanjutnya, cetak kwitansi pembayaran <a href='index.php?page=9'><u>di menu pembayaran</u></a>. dan lakukan konfirmasi pembayaran setelah melakukan pembayaran.
-                </div>";
+                echo "<div class='col-md-12'>
+                        <div class='sufee-alert alert with-close alert-success alert-dismissible fade show'>
+                        <span class='badge badge-pill badge-success'><strong> Selamat! </strong></span>&emsp;pendaftaran anda sudah dikonfirmasi Admin. Selanjutnya, cetak kartu ujian <a href='index.php?page=9'><u>di menu cetak kartu ujian</u></a><button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
 
                 // echo '<a href="../assets/uploads/kwitansi-pembayaran.jpeg" class="btn btn-primary btn-md pull-left" download><i class="fa fa-print"></i> Cetak biaya yang harus dibayar untuk pendaftaran</a>';
 
@@ -21,15 +20,12 @@
 
                 // echo '<br><br>';
             }else if ($daftar['status_pendaftaran'] == 2) {
-                echo "<div class='alert alert-warning alert-dismissable'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    <strong>Anda sudah melakukan pembayaran</strong> 
-                </div>";
+                echo "<div class='col-md-12'>
+                        <div class='sufee-alert alert with-close alert-warning alert-dismissible fade show'><strong>Anda Sudah Melakukan Pembayaran</strong> <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
+
             }else if($daftar['status_pendaftaran'] == 0){
-                echo "<div class='alert alert-warning alert-dismissable'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    <strong>Persyaratan sudah lengkap. tunggu konfirmasi admin paling lambat 2 hari kerja</strong> 
-                </div>";
+                echo "<div class='col-md-12'>
+                        <div class='sufee-alert alert with-close alert-warning alert-dismissible fade show'><strong>Persyaratan sudah lengkap. tunggu konfirmasi admin paling lambat 2 hari kerja</strong> <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
             }
         
     }
@@ -56,12 +52,12 @@
                                     }else if($daftar['status_pendaftaran'] >= 2){
                                         echo '<font color="#2ecc71">Fotocopy Akte kelahiran dan kartu keluarga 2 lembar<i class="fa fa-check"></i></font>';
                                     }else{
-                                        echo '<font color="#2ecc71">Fotocopy Akte kelahiran dan kartu keluarga 2 lembar<i class="fa fa-check"></i></font> <a href="index.php?page=5" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga"><i class="fa fa-pencil"></i></a>';
+                                        echo '<font color="#2ecc71">Fotocopy Akte kelahiran dan kartu keluarga 2 lembar<i class="fa fa-check"></i></font> <a href="index.php?page=5" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga" style=" margin-left: 10px; font-family: Poppins;">Edit</a>';
                                     }
 
                                     
                                 }else{
-                                    echo 'Fotocopy Akte kelahiran dan kartu keluarga 2 lembar <a href="index.php?page=5" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga"><i class="fa fa-upload" style: "font-family: Poppins;"> Upload </i></a>';
+                                    echo 'Fotocopy Akte kelahiran dan kartu keluarga 2 lembar <a href="index.php?page=5" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga" style=" margin-left: 10px; font-family: Poppins;">Upload</a>';
                                 }
 
                                 ?></li>
@@ -73,17 +69,17 @@
                                     }else if($daftar['status_pendaftaran'] >= 2){
                                         echo '<font color="#2ecc71">Foto Calon Siswa ukuran 2R<i class="fa fa-check"></i></font>';
                                     }else{
-                                        echo '<font color="#2ecc71">Foto Calon Siswa ukuran 2R<i class="fa fa-check"></i></font> <a href="index.php?page=6" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga"><i class="fa fa-pencil"></i></a>';
+                                        echo '<font color="#2ecc71">Foto Calon Siswa ukuran 2R<i class="fa fa-check"></i></font> <a href="index.php?page=6" class="btn btn-primary btn-sm" title="Upload Akte Kelahiran dan Kartu Keluarga" style=" margin-left: 10px; font-family: Poppins;">Edit</a>';
                                     }
                                     
                                 }else{
-                                    echo 'Calon Siswa ukuran 2R <a href="index.php?page=6" class="btn btn-primary btn-sm" title="Upload Foto Calon Siswa"><i class="fa fa-upload"> Upload </i></a>';
+                                    echo 'Calon Siswa ukuran 2R <a href="index.php?page=6" class="btn btn-primary btn-sm" title="Upload Foto Calon Siswa" style=" margin-left: 10px; font-family: Poppins;">Upload</a>';
                                 }
 
                                 ?></li>
                         </ol>                        
                         <hr>
-                        <p class="mb-0" style="font-style: italic; font-weight: 600; text-transform: uppercase;">*Catatan : Konfirmasi admin paling lambat 2 hari kerja untuk konfirmasi file. "Jika sudah dikonfirmasi akan ada tanda centang di syarat pendaftaran yang harus dipenuhi."</p>
+                        <p class="mb-0 text-danger" style="font-style: italic; font-weight: 700; text-transform: uppercase;">*Catatan&ensp;:&ensp;Konfirmasi admin paling lambat 2 hari kerja untuk konfirmasi file.&ensp;"Jika sudah dikonfirmasi akan ada tanda centang di syarat pendaftaran yang harus dipenuhi."</p>
                     </div>
                 </div>
             </div>

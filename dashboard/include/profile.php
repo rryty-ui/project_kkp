@@ -129,7 +129,7 @@
                                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                 <table class="table table-borderless table-striped table-earning" style="table-layout:fixed; word-wrap:break-word">
                                     <tbody>
-                                    <tr>
+                                        <tr>
                                             <td><b>Alamat</b></td>
                                             <td>: <?php echo $alamat; ?></td>
                                         </tr>
@@ -139,7 +139,7 @@
                                         </tr>                       
                                         <tr>
                                             <td><b>Kelurahan / Kecamatan<b></td>
-                                            <td>: <?php echo $kelurahan; ?>; / <?php echo $kecamatan; ?></td>
+                                            <td>: <?php echo $kelurahan; ?> / <?php echo $kecamatan; ?></td>
                                         </tr>
                                         <tr>
                                             <td><b>Kota / Kabupaten<b></td>

@@ -1,6 +1,6 @@
 login admin
 
-    email   : adminpsb@gmail.com
+    email   : admin@gmail.com
     pass    : 1234
 
 Login Calon Siswa

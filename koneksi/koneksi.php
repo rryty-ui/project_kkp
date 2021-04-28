@@ -3,7 +3,7 @@
 error_reporting(0);
 
 //Database Configuration
-$db_name 	= "aaa";
+$db_name 	= "sekolah";
 $host		= "localhost";
 $username	= "root";
 $password	= "";

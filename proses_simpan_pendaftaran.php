@@ -16,7 +16,7 @@
 					, '$agama', '$tl', '$tgl', '$anak', '$saudara', '$tb','$bb', '$ntlp', '$al', '$rt'
 					, '$rw', '$kl', '$kc', '$kk', '$pv', '$kp', '$jks', '$transport','$n_ayah', '$tl_ayah'
 					, '$tgl_ayah', '$agama_ayah', '$pd_ayah', '$pk_ayah', '$pn_ayah', '$ntlp_ayah', '$n_ibu'
-					, '$tl_ibu', '$tgl_ibu', '$agama_ibu', '$pd_ibu', '$pk_ibu', '$pn_ibu', '$ntlp_ibu','','','','')";
+					, '$tl_ibu', '$tgl_ibu', '$agama_ibu', '$pd_ibu', '$pk_ibu', '$pn_ibu', '$ntlp_ibu','','','')";
 
 		$exec 	= mysqli_query($conn,$sql);
 
